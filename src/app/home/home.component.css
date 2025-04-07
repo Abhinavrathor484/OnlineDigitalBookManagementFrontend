@@ -1,7 +1,21 @@
 .home {
-    padding: 20px;
-    text-align: center;
-    background-color: #ffffff; /* White background */
-    color: #cc9766; /* Darker beige text color */
-  }
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff; /* White background */
+  color: #cc9766; /* Darker beige text color */
+}
 
+.card {
+  height: 100%;
+}
+
+.card-title {
+  font-family: 'Georgia', serif; /* Beautiful font for the book title */
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.card-img-top {
+  height: 400px; /* Reduce the height of the image */
+  object-fit: cover;
+}
