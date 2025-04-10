@@ -1,0 +1,69 @@
+
+<div class="container mt-4">
+    <h3 class="text-center">Manage Books</h3>
+    <div class="text-end">
+        <button class="btn btn-primary" (click)="openAddBookForm()">Add new Book</button>
+    </div>
+    <table class="table table-striped table-bordered table-hover mt-4">
+        <thead class="thead-light">
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Stock Quantity</th>
+                <th>Author ID</th>
+                <th>Category ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of Books">
+                <td>{{ book.title }}</td>
+                <td>{{ book.price | currency }}</td>
+                <td>{{ book.stockQuantity }}</td>
+                <td>{{ book.authorID }}</td>
+                <td>{{ book.categoryID }}</td>
+                <td>
+                    <button class="btn btn-warning btn-sm me-4" (click)="openEditModal(book)">Edit</button>
+                    <button class="btn btn-danger btn-sm" (click)="deleteBook(book)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Add/Edit Book Modal -->
+    <div class="modal" id="bookModal" [ngStyle]="{'display': showModal ? 'block' : 'none'}">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookModalLabel">{{ formHeader }}</h5>
+                    <button type="button" class="btn-close" (click)="closeModal()"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="editBookForm" (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" id="title" class="form-control" formControlName="title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Price</label>
+                            <input type="number" id="price" class="form-control" formControlName="price">
+                        </div>
+                        <div class="mb-3">
+                            <label for="stockQuantity" class="form-label">Stock Quantity</label>
+                            <input type="number" id="stockQuantity" class="form-control" formControlName="stockQuantity">
+                        </div>
+                        <div class="mb-3">
+                            <label for="authorID" class="form-label">Author ID</label>
+                            <input type="number" id="authorID" class="form-control" formControlName="authorID">
+                        </div>
+                        <div class="mb-3">
+                            <label for="categoryID" class="form-label">Category ID</label>
+                            <input type="number" id="categoryID" class="form-control" formControlName="categoryID">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
