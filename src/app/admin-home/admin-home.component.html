@@ -1,0 +1,36 @@
+<!-- <div class="container-fluid d-flex flex-column min-vh-100" style="background-color: white;">
+  <header class="bg-light text-black text-center py-4 w-100 d-flex align-items-center justify-content-between">
+    <img src="assets/bookstore.png" alt="Logo" class="ml-3" style="height: 80px;">
+    <h1 class="flex-grow-1">Admin Dashboard</h1>
+  </header> -->
+  <app-header></app-header>
+
+  <div class="container-fluid flex-grow-1 d-flex align-items-center justify-content-center">
+    <div class="row w-100 h-100">
+      <div class="col-md-6 d-flex align-items-center justify-content-center mb-4">
+        <button [routerLink]="['/Manage-User']" class="btn btn-primary text-white btn-lg w-100 shadow-lg rounded" style="height: 180px;">
+          <strong>Manage Users</strong>
+        </button>
+      </div>
+      <div class="col-md-6 d-flex align-items-center justify-content-center mb-4">
+        <button [routerLink]="['/Manage-Book']" class="btn btn-success text-white btn-lg w-100 shadow-lg rounded" style="height: 180px;">
+          <strong>Manage Books</strong>
+        </button>
+      </div>
+      <div class="col-md-6 d-flex align-items-center justify-content-center mb-4">
+        <button [routerLink]="['/Manage-Inventory']" class="btn btn-secondary text-white btn-lg w-100 shadow-lg rounded" style="height: 180px;">
+          <strong>Manage Inventory</strong>
+        </button>
+      </div>
+      <div class="col-md-6 d-flex align-items-center justify-content-center mb-4">
+        <button [routerLink]="['/Manage-Reviews']" class="btn btn-danger text-white btn-lg w-100 shadow-lg rounded" style="height: 180px;">
+          <strong>Manage Reviews</strong>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="bg-white text-black text-center py-3 w-100 mt-auto">
+    <p>&copy; 2025 Digital Bookstore Management System. All rights reserved.</p>
+  </footer>
+  

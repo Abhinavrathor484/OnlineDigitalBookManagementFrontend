@@ -1,7 +1,21 @@
+<header class="bg-light text-black text-center py-4 w-100 d-flex align-items-center justify-content-between" style="background-color: lightgrey; padding: 20px;">
+  <img src="assets/bookstore.png" alt="Logo" class="ml-3" style="height: 80px;">
+  <h3 class="fw-bold" style="font-family: 'Arial Black', sans-serif; margin-left: 10px;">DIGITAL BOOKSTORE MANAGEMENT SYSTEM</h3>
+  <div class="ml-auto">
+    <button class="btn btn-success mr-50" [routerLink]="['/Profile-Page']">Profile</button>
+    <span>&nbsp;&nbsp;</span>
+    <button class = "btn btn-danger" (click)="logout()">Logout</button>
+    <span>&nbsp;&nbsp;</span>
+    <button class="btn btn-primary ml-3" [routerLink]="['/All-Books-Page']">Explore All Books</button>
+  </div>
+</header>
+
+<!-- Main Content -->
 <div class="container mt-5">
   <div class="row">
     <div class="col text-center">
-    <p class="display-2 bg-light p-3 rounded"><strong> Hottest in the Market!</strong></p> </div>
+      <p class="display-2 bg-light p-3 rounded"><strong> Hottest in the Market!</strong></p>
+    </div>
   </div>
 </div>
 
@@ -11,7 +25,7 @@
       <div class="row">
         <div class="col-md-3 mb-4" *ngFor="let book of books">
           <div class="card h-100">
-            <img src = "https://thebookcoverdesigner.com/wp-content/uploads/2021/08/Fae-dark.jpg" class="card-img-top" [alt]="book.title">
+            <img src="https://blog.placeit.net/wp-content/uploads/2020/04/design-template-for-a-children-s-stories-book-cover-541.png" class="card-img-top" [alt]="book.title">
             <div class="card-body text-center">
               <h5 class="card-title">{{ book.title }}</h5>
               <!-- <p class="card-text">Price: {{ book.price }}</p> 
@@ -23,3 +37,6 @@
     </div>
   </div>
 </div>
+
+<app-footer></app-footer>
+

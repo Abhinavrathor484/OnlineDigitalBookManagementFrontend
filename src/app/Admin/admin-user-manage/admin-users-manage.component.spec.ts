@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminUsersManageComponent } from './admin-users-manage.component';
+import { AdminUserManageComponent } from './admin-users-manage.component';
 
 describe('AdminUserManageComponent', () => {
-  let component: AdminUsersManageComponent;
-  let fixture: ComponentFixture<AdminUsersManageComponent>;
+  let component: AdminUserManageComponent;
+  let fixture: ComponentFixture<AdminUserManageComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AdminUsersManageComponent]
+      declarations: [AdminUserManageComponent]
     });
-    fixture = TestBed.createComponent(AdminUsersManageComponent);
+    fixture = TestBed.createComponent(AdminUserManageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

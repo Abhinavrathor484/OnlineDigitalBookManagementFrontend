@@ -1,0 +1,43 @@
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    color: black;
+  }
+  
+  .form-group label {
+    color: black;
+  }
+  
+  .register-link {
+    margin-top: 10px;
+    color: blue;
+  }
+  
+  .register-link a {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .form-control {
+    background-color: #e6ccb3;
+    border: 1px solid #cc9766;
+    color: black;
+  }
+  
+  .btn-primary {
+    background-color: #cc9766;
+    border-color: #cc9766;
+    color: black;
+  }
+  
+  .btn-secondary {
+    background-color: #e6ccb3;
+    border-color: #cc9766;
+    color: black;
+  }

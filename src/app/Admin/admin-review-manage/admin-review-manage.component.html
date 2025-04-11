@@ -1,1 +1,75 @@
-<p>admin-review-manage works!</p>
+<app-header></app-header>
+<div class="container mt-4">
+    <h3 class="text-center">Manage Review</h3>
+    <div class="text-end">
+        <button class="btn btn-primary" (click)="openAddReviewForm()">Add new Review</button>
+    </div>
+    <table class="table table-striped table-bordered table-hover mt-4">
+        <thead class="thead-light">
+            <tr>
+                <th>Rating</th>
+                <th>Comment</th>
+                <th>UserID</th>
+                <th>BookID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let review of Reviews">
+                <td>{{ review.rating }}</td>
+                <td>{{ review.comment }}</td>
+                <td>{{ review.userID }}</td>
+                <td>{{ review.bookID }}</td>
+                <td>
+                    <button class="btn btn-warning btn-sm me-4" (click)="openEditModal(review)">Edit</button>
+                    <button class="btn btn-danger btn-sm" (click)="deleteReview(review)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Add/Edit Book Modal -->
+    <div class="modal" id="bookModal" [ngStyle]="{'display': showModal ? 'block' : 'none'}">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reviewModalLabel">{{ formHeader }}</h5>
+                    <button type="button" class="btn-close" (click)="closeModal()"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="editReviewForm" (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label for="rating" class="form-label">Rating</label>
+                            <input type="text" id="rating" class="form-control" formControlName="rating">
+                        </div>
+                        <div class="mb-3">
+                            <label for="comment" class="form-label">Comment</label>
+                            <input type="text" id="comment" class="form-control" formControlName="comment">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userID" class="form-label">UserID</label>
+                            <input type="number" id="userID" class="form-control" formControlName="userID">
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookID" class="form-label">BookID</label>
+                            <input type="number" id="bookID" class="form-control" formControlName="bookID">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+<!-- Add this to your CSS file or within a <style> tag -->
+    <!-- <style>
+        .footer {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+        }
+        .btn-floating {
+          border-radius: 50%;
+        }
+      </style> -->
