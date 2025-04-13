@@ -1,7 +1,7 @@
 <!-- <app-header></app-header>
 <div class="container mt-4 p-4" style="background-color: #f0f8ff; border-radius: 8px;">
     <div class="row">
-        <div class="col-12 text-center mb-4" style="background: linear-gradient(to right, #6a11cb, #2575fc); padding: 20px; border-radius: 8px;">
+        <div class="col-12 text-center mb-4" style="background: linear-gradient(to right, #6a11cb, #2575fc); padding: 15px; border-radius: 8px;">
             <h3 class="text-white">Explore Books</h3>
         </div>
         <div class="col-12 d-flex justify-content-center mb-4">
@@ -23,13 +23,17 @@
                     <h5 class="card-title" style="font-size: 18px; font-weight: bold;">{{ book.title }}</h5>
                     <p class="card-text">Price: {{ book.price | currency }}</p>
                     <p class="card-text">Stock Quantity: {{ book.stockQuantity }}</p>
-                    <button class="btn btn-primary" (click)="BuyNow(book)" style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'">Buy Now</button>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary w-50 me-2" style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'" [routerLink]="['/Payment-Page']">Buy Now</button>
+                        <button class="btn btn-danger w-50"  style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#5a6268'" onmouseout="this.style.backgroundColor='#6c757d'" [routerLink]="['/User-Review-Page']">Review</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <app-footer></app-footer> -->
+
 
 <app-header></app-header>
 <div class="container mt-4 p-4" style="background-color: #f0f8ff; border-radius: 8px;">
@@ -56,9 +60,19 @@
                     <h5 class="card-title" style="font-size: 18px; font-weight: bold;">{{ book.title }}</h5>
                     <p class="card-text">Price: {{ book.price | currency }}</p>
                     <p class="card-text">Stock Quantity: {{ book.stockQuantity }}</p>
+                    <p class="card-text">Author Name: {{ book.authorName }}</p>
+                    <p class="card-text">Category Name: {{ book.categoryName }}</p>
+                   
+                    <div class="book-rating" *ngIf="book.averageRating !== undefined">
+                        <span style="margin-right: 5px;">Average Rating:</span>
+                        <ng-container *ngFor="let star of stars; let i = index">
+                            <i class="fa" [ngClass]="i < book.averageRating ? 'fa-star' : 'fa-star-o'" style="color: yellow;" aria-hidden="true"></i>
+                        </ng-container>
+                    </div>
+                    <div class="d-flex justify-content-between" style="margin-top: 10px;"></div>
                     <div class="d-flex justify-content-between">
-                        <button class="btn btn-primary w-50 me-2" (click)="BuyNow(book)" style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'">Buy Now</button>
-                        <button class="btn btn-danger w-50"  style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#5a6268'" onmouseout="this.style.backgroundColor='#6c757d'">Review</button>
+                        <button class="btn btn-primary w-50 me-2" style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'" [routerLink]="['/Payment-Page']">Buy Now</button>
+                        <button class="btn btn-danger w-50"  style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#5a6268'" onmouseout="this.style.backgroundColor='#6c757d'" [routerLink]="['/User-Review-Page']">Review</button>
                     </div>
                 </div>
             </div>
@@ -66,3 +80,4 @@
     </div>
 </div>
 <app-footer></app-footer>
+ 

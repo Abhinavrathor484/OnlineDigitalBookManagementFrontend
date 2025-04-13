@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserLoginService } from '../services/auth.service';
+import { UserLoginService } from '../Services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,6 +19,5 @@ export class HeaderComponent {
     this.userloginService.logout();
     this.router.navigate(['Web-Page']);
   }
-
 }
 

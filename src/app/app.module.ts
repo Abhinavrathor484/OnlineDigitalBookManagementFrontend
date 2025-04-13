@@ -17,8 +17,9 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { WebPageComponent } from './web-page/web-page.component';
 import { ProfileComponent } from './profile/profile.component';
-
-
+import { PaymentComponent } from './payment/payment.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { UserReviewComponent } from './user-review/user-review.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,10 @@ import { ProfileComponent } from './profile/profile.component';
     LoginComponent,
     RegistrationComponent,
     WebPageComponent,
-    ProfileComponent
+    ProfileComponent,
+    PaymentComponent,
+    CheckoutComponent,
+    UserReviewComponent
     
   ],
   imports: [

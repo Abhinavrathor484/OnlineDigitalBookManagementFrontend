@@ -1,0 +1,56 @@
+<app-header></app-header>
+<div class="container mt-5">
+    <div class="card shadow-sm p-4 mb-5 bg-light rounded">
+      <h3 class="card-title text-primary">Add a Review</h3>
+      <form (ngSubmit)="addReview()" class="mb-4">
+        <div class="form-group">
+          <label for="rating" class="fw-bold">Rating:</label>
+          <div class="star-rating text-left">
+            <ng-container *ngFor="let star of stars">
+              <input type="radio" id="star{{star}}" name="rating" [(ngModel)]="newReview.rating" [value]="star" class="d-none">
+              <label for="star{{star}}" class="star">&#9733;</label>
+            </ng-container>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="comment" class="fw-bold">Comment:</label>
+          <textarea id="comment" [(ngModel)]="newReview.comment" name="comment" required class="form-control" rows="3" placeholder="Write your review here..."></textarea>
+        </div>
+  
+        <div class="form-group">
+          <label for="userID" class="fw-bold"><i class="fa fa-user"></i> User ID:</label>
+          <input id="userID" [(ngModel)]="newReview.userID" name="userID" required class="form-control" placeholder="Enter your User ID">
+        </div>
+  
+        <div class="form-group">
+          <label for="bookID" class="fw-bold"><i class="fa fa-book"></i> Book ID:</label>
+          <input id="bookID" [(ngModel)]="newReview.bookID" name="bookID" required class="form-control" placeholder="Enter the Book ID">
+        </div>
+  
+        <button type="submit" class="btn btn-primary w-100 mt-3 shadow-sm">Add Review</button>
+      </form>
+    </div>
+  
+    <h2 class="mb-4 text-primary" style="font-weight: 700;">Recent User Reviews -</h2>
+    <div class="row">
+      <div class="col-md-6" *ngFor="let review of reviews">
+        <div class="card mb-4 shadow-sm bg-light" style="background-color: #f8f9fa; padding: 20px;">
+          <div class="card-body">
+            <h5 class="card-title text-primary"></h5>
+            <p class="text-muted mb-2"><i class="fa fa-user"></i> Book ID: {{ review.bookID }}</p>
+            <p></p>
+            <div class="star-rating text-left mb-3">
+                <ng-container *ngFor="let star of stars">
+                  <i class="fa" [ngClass]="{'fa-star': star <= review.rating, 'fa-star-o': star > review.rating}"></i>
+                </ng-container>
+              </div>
+              <p class="card-text mt-3">{{ review.comment }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<app-footer></app-footer>
+
+  

@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { AdminBookService } from 'src/app/services/admin-book.service';
+import { AdminBookService } from 'src/app/Services/admin-book.service';
 import { Book } from 'src/app/Models/book.model';
 
 @Component({

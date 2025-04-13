@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Login } from 'src/app/Models/login-user.model';
 import { jwtDecode } from 'jwt-decode';
-import { UserLoginService } from 'src/app/services/auth.service';
+import { UserLoginService } from 'src/app/Services/auth.service';
  
 @Component({
   selector: 'app-login',

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { WebPageComponent } from './web-page/web-page.component';
@@ -11,6 +11,10 @@ import { AdminReviewManageComponent } from './Admin/admin-review-manage/admin-re
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { BookPageComponent } from './Book/book-page/book-page.component';
 import { ProfileComponent } from './profile/profile.component';
+import { PaymentComponent } from './payment/payment.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { UserReviewComponent } from './user-review/user-review.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'Web-Page', pathMatch: 'full' },
@@ -24,11 +28,10 @@ const routes: Routes = [
   {path:'Manage-Reviews' , component:AdminReviewManageComponent},
   { path:'App-Home', component:HomeComponent},
   { path:'All-Books-Page', component:BookPageComponent},
-  { path:'Profile-Page', component:ProfileComponent}
-
-
-  // { path: '', component: HomeComponent },
-  // Add more routes here if needed
+  { path:'Profile-Page', component:ProfileComponent},
+  { path:'Payment-Page', component:PaymentComponent},
+  { path:'Checkout-Page-User', component:CheckoutComponent},
+  { path:'User-Review-Page', component:UserReviewComponent}
 ];
 
 @NgModule({

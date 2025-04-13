@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ReviewService } from 'src/app/services/review.service';
+import { ReviewService } from 'src/app/Services/review.service';
 import { Review } from 'src/app/Models/review.model';
 
 @Component({
