@@ -15,18 +15,19 @@ import { PaymentComponent } from './payment/payment.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { UserReviewComponent } from './user-review/user-review.component';
 import { CartComponent } from './cart/cart.component';
+import { AdminGuard } from './AuthGuard';
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'Web-Page', pathMatch: 'full' },
   { path: 'Web-Page', component: WebPageComponent },
   { path: 'User-Login-Page' , component:LoginComponent},
-  { path: 'Admin-Home' , component:AdminHomeComponent},
+  { path: 'Admin-Home' , component:AdminHomeComponent, canActivate: [AdminGuard]},
   { path:'Register-Page' , component:RegistrationComponent},
-  { path:'Manage-User' , component:AdminUserManageComponent},
-  { path:'Manage-Book' , component:AdminBooksManageComponent},
-  { path:'Manage-Inventory' , component:AdminInventoryManageComponent},
-  { path:'Manage-Reviews' , component:AdminReviewManageComponent},
+  { path:'Manage-User' , component:AdminUserManageComponent, canActivate: [AdminGuard]},
+  { path:'Manage-Book' , component:AdminBooksManageComponent, canActivate: [AdminGuard]},
+  { path:'Manage-Inventory' , component:AdminInventoryManageComponent, canActivate: [AdminGuard]},
+  { path:'Manage-Reviews' , component:AdminReviewManageComponent, canActivate: [AdminGuard]},
   { path:'App-Home', component:HomeComponent},
   { path:'All-Books-Page', component:BookPageComponent},
   { path:'Profile-Page', component:ProfileComponent},
