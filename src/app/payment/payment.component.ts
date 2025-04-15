@@ -1,16 +1,10 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-payment',
-//   templateUrl: './payment.component.html',
-//   styleUrls: ['./payment.component.css']
-// })
-// export class PaymentComponent {
-
-// }
-
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Order } from 'src/app/Models/order.model';
+import { CartService } from '../Services/cart.service';
+import { UserProfileService } from '../Services/user-profile.service';
+import { PaymentService } from '../Services/payment.service';
+import { Profile } from '../Models/profile.model';
 
 @Component({
   selector: 'app-payment',
@@ -18,26 +12,48 @@ import { Router } from '@angular/router';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-  order: any = {
-    orderID: 12345,
-    orderDate: new Date(),
-    totalAmount: 100,
-    status: '1',
-    userID: 10
-  };
-  errorMessage: string = '';
+  userProfile: Profile | null = null;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private cartService: CartService,
+    private userProfileService: UserProfileService,
+    private paymentService: PaymentService
+  ) {}
 
   ngOnInit(): void {
-    // Initialization logic if needed
+    this.userProfileService.fetchUserProfile();
+    this.userProfileService.userProfile$.subscribe(
+      (data) => {
+        this.userProfile = data;
+      },
+      (error) => {
+        console.error('Error fetching user profile:', error);
+      }
+    );
   }
 
-  postOrder(): void {
-    this.router.navigate(['/Checkout-Page']);
+  proceedToPayment(): void {
+    const order: Omit<Order, 'orderID'> = {
+      orderDate: new Date(),
+      totalAmount: this.cartService.getTotalAmount(),
+      status: 1, // Hardcoded status
+      userID: this.userProfile?.userID || 0 // Get user ID from userProfile
+    };
+
+    this.paymentService.createOrder(order).subscribe(
+      (response) => {
+        console.log('Order successfully created:', response);
+        alert("Order Created Successfully!");
+        this.router.navigate(['/Checkout-Page-User']);
+      },
+      (error) => {
+        console.error('Error creating order:', error);
+        alert("Failed to create order. Please try again.");
+      }
+    );
   }
 }
-
 
 
 

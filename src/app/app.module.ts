@@ -20,6 +20,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { UserReviewComponent } from './user-review/user-review.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { UserReviewComponent } from './user-review/user-review.component';
     ProfileComponent,
     PaymentComponent,
     CheckoutComponent,
-    UserReviewComponent
+    UserReviewComponent,
+    CartComponent
     
   ],
   imports: [

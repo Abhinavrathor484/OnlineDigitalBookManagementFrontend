@@ -30,7 +30,7 @@ ngOnInit(): void {
   }
 
   openAddReviewForm(): void {
-    this.currentReview = { reviewID: 0,  rating:0, comment: '',  userID: 0, bookID: 0 };
+    this.currentReview = { reviewID: 0,  rating:0, comment: '',  userID: 0, bookID: 0, title:'' };
     this.editReviewForm.reset();
     this.formHeader = "Add Review";
     this.showModal = true;

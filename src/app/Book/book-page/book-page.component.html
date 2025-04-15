@@ -1,45 +1,25 @@
-<!-- <app-header></app-header>
-<div class="container mt-4 p-4" style="background-color: #f0f8ff; border-radius: 8px;">
-    <div class="row">
-        <div class="col-12 text-center mb-4" style="background: linear-gradient(to right, #6a11cb, #2575fc); padding: 15px; border-radius: 8px;">
-            <h3 class="text-white">Explore Books</h3>
-        </div>
-        <div class="col-12 d-flex justify-content-center mb-4">
-            <input type="text" id="SearhByText" class="form-control w-50" placeholder="Search Here" #searchInput style="border-radius: 4px; padding: 10px;">
-            <button class="btn btn-primary ms-2" (click)="searchBooks(searchInput.value)" style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'">Search</button>
-            <button class="btn btn-secondary ms-2" (click)="toggleSortDropdown()" style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#5a6268'" onmouseout="this.style.backgroundColor='#6c757d'">Sort</button>
-            <button class="btn btn-info ms-2" (click)="getAllBooks()" style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#117a8b'" onmouseout="this.style.backgroundColor='#17a2b8'">All Books</button>
-        </div>
-        <div class="col-12 d-flex justify-content-center mb-4" *ngIf="showSortDropdown">
-            <select class="form-select w-auto" #sortCriterion (change)="sortBooks(sortCriterion.value)" style="border-radius: 4px; padding: 10px;">
-                <option value="" disabled selected>Select criterion</option>
-                <option value="title">Title</option>
-                <option value="price">Price</option>
-            </select>
-        </div>
-        <div class="col-md-4 mt-4" *ngFor="let book of books">
-            <div class="card mb-4 shadow-lg" style="border-radius: 8px; overflow: hidden;">
-                <div class="card-body" style="padding: 20px;">
-                    <h5 class="card-title" style="font-size: 18px; font-weight: bold;">{{ book.title }}</h5>
-                    <p class="card-text">Price: {{ book.price | currency }}</p>
-                    <p class="card-text">Stock Quantity: {{ book.stockQuantity }}</p>
-                    <div class="d-flex justify-content-between">
-                        <button class="btn btn-primary w-50 me-2" style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'" [routerLink]="['/Payment-Page']">Buy Now</button>
-                        <button class="btn btn-danger w-50"  style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#5a6268'" onmouseout="this.style.backgroundColor='#6c757d'" [routerLink]="['/User-Review-Page']">Review</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<header class="bg-light text-black text-center py-4 w-100 d-flex align-items-center justify-content-between" style="background-color: lightgrey; padding: 20px;">
+    <img src="assets/bookstore.png" alt="Logo" class="ml-3" style="height: 80px;">
+    <h3 class="fw-bold" style="font-family: 'Arial Black', sans-serif; margin-left: 10px;">DIGITAL BOOKSTORE MANAGEMENT SYSTEM</h3>
+    <div class="ml-auto">
+      <button class="btn btn-primary ms-2" [routerLink]="['/User-Cart-Page']">
+        <i class="fas fa-shopping-cart"></i> Your Cart
+      </button>
+      <span>&nbsp;&nbsp;</span>
+      <button class="btn btn-success mr-50" [routerLink]="['/Profile-Page']">
+        <i class="fas fa-user"></i> Profile
+      </button>
+      <span>&nbsp;&nbsp;</span>
+      <button class="btn btn-danger" (click)="logout()">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
     </div>
-</div>
-<app-footer></app-footer> -->
-
-
-<app-header></app-header>
+  </header>
+  
 <div class="container mt-4 p-4" style="background-color: #f0f8ff; border-radius: 8px;">
     <div class="row">
         <div class="col-12 text-center mb-4" style="background: linear-gradient(to right, #6a11cb, #2575fc); padding: 15px; border-radius: 8px;">
-            <h3 class="text-white">Explore Books</h3>
+            <h3 class="text-white fw-boldS">EXPLORE BOOKS</h3>
         </div>
         <div class="col-12 d-flex justify-content-center mb-4">
             <input type="text" id="SearhByText" class="form-control w-50" placeholder="Search Here" #searchInput style="border-radius: 4px; padding: 10px;">
@@ -62,7 +42,6 @@
                     <p class="card-text">Stock Quantity: {{ book.stockQuantity }}</p>
                     <p class="card-text">Author Name: {{ book.authorName }}</p>
                     <p class="card-text">Category Name: {{ book.categoryName }}</p>
-                   
                     <div class="book-rating" *ngIf="book.averageRating !== undefined">
                         <span style="margin-right: 5px;">Average Rating:</span>
                         <ng-container *ngFor="let star of stars; let i = index">
@@ -71,8 +50,8 @@
                     </div>
                     <div class="d-flex justify-content-between" style="margin-top: 10px;"></div>
                     <div class="d-flex justify-content-between">
-                        <button class="btn btn-primary w-50 me-2" style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'" [routerLink]="['/Payment-Page']">Buy Now</button>
-                        <button class="btn btn-danger w-50"  style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#5a6268'" onmouseout="this.style.backgroundColor='#6c757d'" [routerLink]="['/User-Review-Page']">Review</button>
+                        <button class="btn btn-primary w-50 me-2" style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'" (click)="addToCart(book)" >Add to Cart</button>
+                        <button class="btn btn-danger w-50" style="padding: 10px; border-radius: 4px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#5a6268'" onmouseout="this.style.backgroundColor='#6c757d'" [routerLink]="['/User-Review-Page']">Review</button>
                     </div>
                 </div>
             </div>
@@ -80,4 +59,4 @@
     </div>
 </div>
 <app-footer></app-footer>
- 
+

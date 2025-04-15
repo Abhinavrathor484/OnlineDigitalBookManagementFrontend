@@ -2,13 +2,20 @@
   <img src="assets/bookstore.png" alt="Logo" class="ml-3" style="height: 80px;">
   <h3 class="fw-bold" style="font-family: 'Arial Black', sans-serif; margin-left: 10px;">DIGITAL BOOKSTORE MANAGEMENT SYSTEM</h3>
   <div class="ml-auto">
-    <button class="btn btn-success mr-50" [routerLink]="['/Profile-Page']">Profile</button>
+    <button class="btn btn-success mr-50" [routerLink]="['/Profile-Page']">
+      <i class="fas fa-user"></i> Profile
+    </button>
     <span>&nbsp;&nbsp;</span>
-    <button class = "btn btn-danger" (click)="logout()">Logout</button>
+    <button class="btn btn-danger" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i> Logout
+    </button>
     <span>&nbsp;&nbsp;</span>
-    <button class="btn btn-primary ml-3" [routerLink]="['/All-Books-Page']">Explore All Books</button>
+    <button class="btn btn-primary ml-3" [routerLink]="['/All-Books-Page']">
+      <i class="fas fa-book"></i> Explore All Books
+    </button>
   </div>
 </header>
+
 
 <!-- Main Content -->
 <div class="container mt-5">

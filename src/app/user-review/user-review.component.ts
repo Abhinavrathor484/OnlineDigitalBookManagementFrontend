@@ -14,8 +14,10 @@ export class UserReviewComponent implements OnInit {
     rating: 0,
     comment: '',
     userID: 0,
-    bookID: 0
+    bookID: 0,
+    title: ''
   };
+
   stars: number[] = [1, 2, 3, 4, 5];
 
   constructor(private reviewService: ReviewService) {}
@@ -27,7 +29,7 @@ export class UserReviewComponent implements OnInit {
   loadReviews(): void {
     this.reviewService.getReview().subscribe(
       (data: Review[]) => {
-        this.reviews = data;
+        this.reviews = data.slice(0, 8); // Get only the first 7 books
       },
       (error) => {
         console.error('Error fetching reviews:', error);
@@ -55,7 +57,8 @@ export class UserReviewComponent implements OnInit {
       rating: 0,
       comment: '',
       userID: 0,
-      bookID: 0
+      bookID: 0,
+      title:''
     };
   }
 }

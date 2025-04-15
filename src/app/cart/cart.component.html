@@ -1,0 +1,35 @@
+<app-header></app-header>
+<div class="container mt-4 p-4" style="background-color: #f0f8ff; border-radius: 8px;">
+    <div class="row">
+        <div class="col-12 text-center mb-4" style="background: linear-gradient(to right, #6a11cb, #2575fc); padding: 15px; border-radius: 8px;">
+            <h3 class="text-white fw-bold">YOUR CART</h3>
+        </div>
+        <div class="col-12" *ngIf="cart.length === 0">
+            <div class="alert alert-info text-center" role="alert">
+                Your cart is empty. Start adding books!
+            </div>
+        </div>
+        <div class="col-12" *ngIf="cart.length > 0">
+            <div class="card mb-4 shadow-lg" style="border-radius: 8px;">
+                <div class="card-body">
+                    <h5 class="card-title">Books in Your Cart</h5>
+                    <ul class="list-group">
+                        <li *ngFor="let book of cart" class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>
+                                <strong>{{ book.title }}</strong> - {{ book.price | currency }}
+                            </span>
+                            <button type="button" class="btn btn-danger btn-sm" (click)="removeFromCart(book)">
+                                Remove
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-end">
+                <button class="btn btn-success btn-block" style="padding: 10px; border-radius: 4px; transition: background-color 0.3s; width: 100%;" onmouseover="this.style.backgroundColor='#218838'" onmouseout="this.style.backgroundColor='#28a745'" [routerLink]="['../Payment-Page']">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+

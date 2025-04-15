@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'; // Decorator used to store metadata - Data about data
 import { Router } from '@angular/router';
 import { Login } from 'src/app/Models/login-user.model';
 import { jwtDecode } from 'jwt-decode';
 import { UserLoginService } from 'src/app/Services/auth.service';
  
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
-  standalone: false
+  selector: 'app-login', // used in app.component.html
+  templateUrl: './login.component.html', // Defines the html file for this component
+  styleUrls: ['./login.component.css'], // Defines the css file for this component
+  standalone: false // Means that it should be declared in NgModule and can not work independently it relies on the dependency injection
 })
-export class LoginComponent {
- 
-  user:Login = {
+export class LoginComponent { // LoginComponent is the name of the component 
+                              
+  user:Login = {  // Export Keyword Means it can be imported by other files in the angular application
     email: '',
     password: ''
   };

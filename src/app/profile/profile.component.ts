@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from '../services/profile.service';
+import { ProfileService } from '../Services/profile.service';
 import { Profile } from '../Models/profile.model';
 import { jwtDecode } from 'jwt-decode';
 

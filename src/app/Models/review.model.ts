@@ -4,4 +4,5 @@ export interface Review {
     comment:string;
     userID: number;
     bookID: number;
+    title:string;
 }

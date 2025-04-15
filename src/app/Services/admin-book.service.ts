@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'; // Using this to make it available for dependency injection
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Book } from '../Models/book.model';
 import { Observable, throwError } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({  
+  providedIn: 'root' // Using this means we do not need to mention it in the providers of the app module
+}) // Hence the service is available to be used by anyone in the project 
 export class AdminBookService {
   private GetallBooksApiUrl = 'https://localhost:7028/api/Book';
   private DeletetheBookapiUrl = 'https://localhost:7028/api/Book';

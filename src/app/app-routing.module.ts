@@ -14,24 +14,26 @@ import { ProfileComponent } from './profile/profile.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { UserReviewComponent } from './user-review/user-review.component';
+import { CartComponent } from './cart/cart.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'Web-Page', pathMatch: 'full' },
   { path: 'Web-Page', component: WebPageComponent },
-  {path: 'login-Page' , component:LoginComponent},
-  {path: 'Admin-Home' , component:AdminHomeComponent},
-  {path:'Register-Page' , component:RegistrationComponent},
-  {path:'Manage-User' , component:AdminUserManageComponent},
-  {path:'Manage-Book' , component:AdminBooksManageComponent},
-  {path:'Manage-Inventory' , component:AdminInventoryManageComponent},
-  {path:'Manage-Reviews' , component:AdminReviewManageComponent},
+  { path: 'User-Login-Page' , component:LoginComponent},
+  { path: 'Admin-Home' , component:AdminHomeComponent},
+  { path:'Register-Page' , component:RegistrationComponent},
+  { path:'Manage-User' , component:AdminUserManageComponent},
+  { path:'Manage-Book' , component:AdminBooksManageComponent},
+  { path:'Manage-Inventory' , component:AdminInventoryManageComponent},
+  { path:'Manage-Reviews' , component:AdminReviewManageComponent},
   { path:'App-Home', component:HomeComponent},
   { path:'All-Books-Page', component:BookPageComponent},
   { path:'Profile-Page', component:ProfileComponent},
   { path:'Payment-Page', component:PaymentComponent},
   { path:'Checkout-Page-User', component:CheckoutComponent},
-  { path:'User-Review-Page', component:UserReviewComponent}
+  { path:'User-Review-Page', component:UserReviewComponent},
+  { path:'User-Cart-Page', component:CartComponent}
 ];
 
 @NgModule({
