@@ -93,7 +93,7 @@
                 <span>
                     <strong>Low Quantity For</strong> - Book ID: {{ inventory.bookID }}, Quantity: {{ inventory.quantity }}
                 </span>
-                <button type="button" class="btn btn-danger btn-sm" (click)="openAddInventoryForm()">
+                <button type="button" class="btn btn-danger btn-sm" (click)="openEditModal(inventory)">
                     Urgent Restock Required!
                 </button>
             </li>
