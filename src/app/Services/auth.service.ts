@@ -26,6 +26,8 @@ export class UserLoginService {
 
   logout(){
     localStorage.removeItem('authToken');
+    localStorage.removeItem('userRole');
+    localStorage.removeItem('cart');
   }
  
 }

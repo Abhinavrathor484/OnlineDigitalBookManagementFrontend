@@ -32,13 +32,9 @@ export class LoginComponent { // LoginComponent is the name of the component
           const decoded: any = jwtDecode(token); // Decode the JWT
           console.log(decoded);
           console.log(decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/email'] || null);
-          // alert('Login Successful!');
-          // Redirect to the Manage Events page
           const role = decoded['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
           localStorage.setItem('userRole', role); // Store the role in local storage
- 
-          alert('Login Successful!'); 
-          // Redirect based on role
+           // Redirect based on role
           if (role === 'Admin') {
             this.router.navigate(['/Admin-Home']);
           } else if (role === 'User') {
