@@ -1,5 +1,5 @@
 <header class="bg-light text-black text-center py-4 w-100 d-flex align-items-center justify-content-between" style="background-color: lightgrey; padding: 20px;">
-    <img src="assets/bookstore.png" alt="Logo" class="ml-3" style="height: 80px;">
+    <img src="assets/bookstore.png" alt="Logo" class="ml-3" style="height: 70px;">
     <h3 class="fw-bold" style="font-family: 'Arial Black', sans-serif; margin-left: 10px;">DIGITAL BOOKSTORE MANAGEMENT SYSTEM</h3>
     <div class="ml-auto">
       <button class="btn btn-primary ms-2" [routerLink]="['/User-Cart-Page']">
@@ -39,7 +39,6 @@
                 <div class="card-body" style="padding: 20px;">
                     <h5 class="card-title" style="font-size: 18px; font-weight: bold;">{{ book.title }}</h5>
                     <p class="card-text">Price: {{ book.price | currency }}</p>
-                    <p class="card-text">Stock Quantity: {{ book.stockQuantity }}</p>
                     <p class="card-text">Author Name: {{ book.authorName }}</p>
                     <p class="card-text">Category Name: {{ book.categoryName }}</p>
                     <div class="book-rating" *ngIf="book.averageRating !== undefined">
