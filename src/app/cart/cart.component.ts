@@ -13,7 +13,7 @@ export class CartComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.loadCart();
+    this.loadCart();   //calling loadcart function
   }
 
   loadCart(): void {
